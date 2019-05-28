@@ -9,7 +9,7 @@ The paradigm used is **functional reactive programming**.
 
 The project states it's philosophy as such:
 
-**Anything that can be derived from the application state, should be derived. Automatically.
+**Anything that can be derived from the application state, should be derived. Automatically.**
 
 ## Installing mobX
 

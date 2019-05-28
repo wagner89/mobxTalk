@@ -9,7 +9,12 @@ The paradigm used is **functional reactive programming**.
 
 The project states it's philosophy as such:
 
-__ Anything that can be derived from the application state, should be derived. Automatically.
+__ Anything that can be derived from the application state, should be derived. Automatically. __
+
+## Installing mobX
+
+`npm install mobx --save` - MobX library
+`npm install mobx-react --save` - React bindings for MobX
 
 
 

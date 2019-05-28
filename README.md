@@ -14,6 +14,7 @@ __ Anything that can be derived from the application state, should be derived. A
 ## Installing mobX
 
 `npm install mobx --save` - MobX library
+
 `npm install mobx-react --save` - React bindings for MobX
 
 

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './Warfield.css';
 import Army from './Army';
+import { observer } from 'mobx-react';
+import Devtools from 'mobx-react-devtools';
 
-export default class Warfield extends Component {
+@observer
+class Warfield extends Component {
   render() {
     const { model } = this.props;
 
@@ -20,7 +23,10 @@ export default class Warfield extends Component {
 
         <h2>{`The war was won by ${model.winner}`}</h2>
 
+        <Devtools/>
       </div>
     );
   }
 }
+
+export default Warfield;

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './Army.css';
 import marine from '../images/marine.png';
 import hydra from '../images/hydra.png';
+import { observer } from 'mobx-react';
 
+@observer
 class Army extends Component {
 
   handleAdd = () => {

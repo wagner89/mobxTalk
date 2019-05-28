@@ -21,7 +21,8 @@ class Warfield extends Component {
 
         </div>
 
-        <h2>{`The war was won by ${model.winner}`}</h2>
+        { /* <h2>{`The war was won by ${model.winner}`}</h2> */ }
+        
 
         <Devtools/>
       </div>

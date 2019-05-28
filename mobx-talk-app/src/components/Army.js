@@ -2,31 +2,27 @@ import React, { Component } from 'react';
 import './Army.css';
 import marine from '../images/marine.png';
 import hydra from '../images/hydra.png';
-import { observable } from 'mobx';
-import { observer } from 'mobx-react';
 
-@observer
 class Army extends Component {
 
-  @observable cnt = 0;
-
   handleAdd = () => {
-    this.cnt++;
+    this.props.armyModel.addUnit();
   }
 
   handleRemove = () => {
-    this.cnt--;
+    this.props.armyModel.removeUnit();
   }
 
   render() {
     const { armyModel } = this.props;
-    const { image, name, unitName } = armyModel;
+    const { count, name, image } = armyModel;
+    const cnt = count && count >= 0 ? count : 0;
 
     return <div className='armyCell'>
       <div>
-        <h4>{`The great ${name} army of ${this.cnt} ${unitName}`}</h4>
+        <h4>{`The great ${name} army of ${count}`}</h4>
         <div>
-            {Array(this.cnt).fill(1).map(i => <img src={image === 'hydra' ? hydra : marine} alt='...'/>)} 
+            {Array(cnt).fill(1).map(i => <img src={image === 'hydra' ? hydra : marine} alt='...'/>)} 
         </div>
       </div>
       <div className='buttons'>

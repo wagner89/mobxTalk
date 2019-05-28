@@ -1,15 +1,19 @@
-import { action, observable, computed } from 'mobx';
-
 export default class WarfieldModel {
 
-  @observable army1;
+  army1;
 
-  @observable army2;
+  army2;
 
-  @computed
+  constructor(army1, army2) {
+    this.army1 = army1;
+    this.army2 = army2;
+  }
+
   get winner() {
-    return this.army1?.count > this.army2?.count ?
-      this.army1?.name || "Army 1" : this.army2?.name || "Army 2";
+    const { army1, army2 } = this;
+
+    return army1?.count > army2?.count ?
+      army1?.name || "Army 1" : army2?.name || "Army 2";
   }
 
 }

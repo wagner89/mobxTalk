@@ -19,6 +19,9 @@ The project states it's philosophy as such:
 
 Using decorators (needs a plugin in .bablerc or package.json)
 
+Install the plugin:
+`yarn add @babel/plugin-proposal-decorators`
+
 ```
   "babel": {
     "plugins": [

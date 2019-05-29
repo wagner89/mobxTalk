@@ -76,7 +76,8 @@ Install the plugin:
   - User input
   - WS notifications
   - What are transactions? (deprecated explicitly since MobX 3)
-  
+
+Cool syntax cheat-sheet is [here](https://devhints.io/mobx)
 
 **Reactions and derivations**
 

@@ -17,6 +17,26 @@ The project states it's philosophy as such:
 
 `npm install mobx-react --save` - React bindings for MobX
 
+Using decorators (needs a plugin in .bablerc or package.json)
+
+```
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-optional-chaining"
+      ]
+    ],
+    "presets": [
+      "react-app"
+    ]
+  },
+```
 
 
 

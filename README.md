@@ -108,6 +108,8 @@ Note: most important resource when debugging something not happening:
   
 3. @observer on a component essentially makes render a reaction, tracking all the data that is accessed in it
 
+4. The `runInAction` utility (async code that modifies state) [here](https://mobx.js.org/best/actions.html)
+
 ## Some differences compared to Redux
 
 | Redux  | MobX  |

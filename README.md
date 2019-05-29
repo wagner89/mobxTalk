@@ -91,11 +91,19 @@ In other words, reaction that trigger more reactions, or reactions that update s
 
 ## Sources
 [Official MobX website](https://mobx.js.org/getting-started.html)
+
 [Awesome short video series[(https://egghead.io/lessons/react-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react)
+
 [Fundamental MobX principles put nicely](https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8)
+
 [A nice MobX overview](https://hackernoon.com/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)
+
 [MobX best practices](https://medium.com/dailyjs/mobx-react-best-practices-17e01cec4140)
+
 [MobX 3 Documentation](https://github.com/mobxjs/mobx/blob/54557dc319b04e92e31cb87427bef194ec1c549c/docs/refguide/api.md)
+
 [Curated list of cool MobX related stuff](https://github.com/mobxjs/awesome-mobx)
+
 [Boilerplates to create MobX app](https://github.com/mobxjs/awesome-mobx#boilerplates)
+
 [Redux vs MobX comparison](https://www.robinwieruch.de/redux-mobx-confusion/)

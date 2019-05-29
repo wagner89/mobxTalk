@@ -63,9 +63,9 @@ Install the plugin:
   - What are transactions? (deprecated explicitly since MobX 3)
   
 
-Reactions and derivations
+**Reactions and derivations**
 
-computed vs autorun (and also when)
+1. computed vs autorun (and also when)
 ```
 var numbers = observable([1,2,3]);
 
@@ -82,6 +82,8 @@ numbers.push(5);
 // won't print anything, nor is `sum` re-evaluated
 ```
 
+Note: most important resource when debugging something not happening:
+[What will MobX react to?](https://mobx.js.org/best/react)
   
 ## Specifics regarding React
 

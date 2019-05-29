@@ -3,6 +3,7 @@ import './App.css';
 import Warfield from './components/Warfield';
 import WarfieldModel from './models/WarfieldModel';
 import ArmyModel from './models/ArmyModel';
+import { Provider } from 'mobx-react';
 
 function App() {
 
@@ -15,7 +16,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>MobX Wargame</h2>
-        <Warfield model={warfieldModel} />
+        <Provider model={warfieldModel}>
+        <Warfield />
+      </Provider>
       </header>
     </div>
   );

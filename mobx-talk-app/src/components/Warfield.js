@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './Warfield.css';
 import Army from './Army';
-import { observer } from 'mobx-react';
+import { inject, Observer } from 'mobx-react';
 import Devtools from 'mobx-react-devtools';
 
-@observer
+@inject(({ model }) => ({
+  model
+}))
 class Warfield extends Component {
   render() {
     const { model } = this.props;
@@ -21,7 +23,11 @@ class Warfield extends Component {
 
         </div>
 
-        <h2>{`The war was won by ${model.winner}`}</h2>
+        <Observer>
+        {
+          () => <h2>{`The war was won by ${model?.winner}`}</h2>
+        }
+        </Observer>
 
         <Devtools/>
       </div>

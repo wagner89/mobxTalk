@@ -92,7 +92,7 @@ In other words, reaction that trigger more reactions, or reactions that update s
 ## Sources
 [Official MobX website](https://mobx.js.org/getting-started.html)
 
-[Awesome short video series[(https://egghead.io/lessons/react-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react)
+[Awesome short video series](https://egghead.io/lessons/react-sync-the-ui-with-the-app-state-using-mobx-observable-and-observer-in-react)
 
 [Fundamental MobX principles put nicely](https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8)
 

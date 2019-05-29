@@ -11,6 +11,21 @@ The project states it's philosophy as such:
 
 **Anything that can be derived from the application state, should be derived. Automatically.**
 
+Some notes on ideas that shaped MobX:
+
+```
+1. The application state of complex applications can best be expressed using graphs to achieve referential consistency and stay close to the mental model of a problem domain.
+
+2. One should not imperatively act on state changes by using manually defined subscriptions or cursors. This will inevitably lead to bugs as a result of under- or oversubscribing.
+
+3. Use runtime analysis to determine the smallest possible set of observer → observable relationships. This leads to a computational model where it can be guaranteed that the minimum amount of derivations are run without ever observing a stale value.
+
+4. Any derivation that is not needed to achieve an active side effect can be optimized away completely.
+
+```
+(https://hackernoon.com/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)
+
+
 ## Installing mobX
 
 `npm install mobx --save` - MobX library
@@ -91,7 +106,7 @@ Note: most important resource when debugging something not happening:
 
 2. <Observer> instead of @observer on the class
   
-3.
+3. @observer on a component essentially makes render a reaction, tracking all the data that is accessed in it
 
 ## Some differences compared to Redux
 
@@ -116,7 +131,29 @@ Note: most important resource when debugging something not happening:
 `
 In other words, reaction that trigger more reactions, or reactions that update state: They are both considered anti patterns in MobX. Chained reactions lead to a hard to follow chain of events and should be avoided.
 `
-3.
+
+3. MobX executes derivations synchronously, so you don't need to worry about a stale read
+  - clearer stack trace than in an async/await environment
+  - values can immediately be read after they were altered
+  
+4. Always try to dereference values later (deeper in the DOM tree)
+  - since any dereferencing on an observable triggers re-render for an observer component, the lower down this happens, the less is re-rendered
+ 
+```
+Fast:
+
+<DisplayName person={person} />
+
+Slower:
+
+<DisplayName name={person.name} />.
+
+There is nothing wrong to the latter. But a change in the name property will, in the first case, trigger the DisplayName to re-render, while in the latter, the owner of the component has to re-render. However, it is more important for your components to have a comprehensible API than applying this optimization. To have the best of both worlds, consider making smaller components:
+
+const PersonNameDisplayer = observer(({ props }) => <DisplayName name={props.person.name} />)
+```
+(https://doc.ebichu.cc/mobx/best/react-performance.html)
+
 
 ## Sources
 [Official MobX website](https://mobx.js.org/getting-started.html)

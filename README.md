@@ -66,7 +66,7 @@ Install the plugin:
 Reactions and derivations
 
 computed vs autorun (and also when)
-`
+```
 var numbers = observable([1,2,3]);
 
 var sum = computed(() => numbers.reduce((a, b) => a + b, 0));
@@ -80,7 +80,7 @@ numbers.push(4);
 disposer();
 numbers.push(5);
 // won't print anything, nor is `sum` re-evaluated
-`
+```
 
   
 ## Specifics regarding React

@@ -60,6 +60,7 @@ Install the plugin:
 
 1. State
   - What is an observable?
+    - IMPORTANT: `It's not the values that are observable, but the properties of an object.`
   - What can be observable? (objects, arrays, maps)
   - What is observable.shallow (collections, but not their contents)
   
@@ -107,7 +108,7 @@ Note: most important resource when debugging something not happening:
 
 2. <Observer> instead of @observer on the class
   
-3. @observer on a component essentially makes render a reaction, tracking all the data that is accessed in it
+3. @observer on a component essentially makes render a reaction, wrapping it into `mobx.autorun()`, tracking all the data that is accessed in it
 
 4. The `runInAction` utility (async code that modifies state) [here](https://mobx.js.org/best/actions.html)
 

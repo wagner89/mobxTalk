@@ -154,6 +154,31 @@ const PersonNameDisplayer = observer(({ props }) => <DisplayName name={props.per
 ```
 (https://doc.ebichu.cc/mobx/best/react-performance.html)
 
+5. Dispose reactions explicitly when no longer needed
+```
+const VAT = observable(1.20)
+
+class OrderLIne {
+    @observable price = 10;
+    @observable amount = 1;
+    constructor() {
+        // this autorun will be GC-ed together with the current orderline instance
+        this.handler = autorun(() => {
+            doSomethingWith(this.price * this.amount)
+        })
+        // this autorun won't be GC-ed together with the current orderline instance
+        // since VAT keeps a reference to notify this autorun,
+        // which in turn keeps 'this' in scope
+        this.handler = autorun(() => {
+            doSomethingWith(this.price * this.amount * VAT.get())
+        })
+        // So, to avoid subtle memory issues, always call..
+        this.handler()
+        // When the reaction is no longer needed!
+    }
+}
+```
+(https://doc.ebichu.cc/mobx/best/pitfalls.html)
 
 ## Sources
 [Official MobX website](https://mobx.js.org/getting-started.html)
